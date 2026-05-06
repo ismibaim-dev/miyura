@@ -1,0 +1,267 @@
+/* ============================================================
+   Miyura — site theme
+   Refined minimal. Editorial. Trustworthy. Open source.
+   ============================================================ */
+
+/* Fonts: Fraunces (display, characterful serif) + Inter Tight (body)
+   + JetBrains Mono (code/eyebrows). Loaded from Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Brand tokens */
+  --ty-paper:        #f7f4ee;   /* warm off-white, like rice paper */
+  --ty-paper-soft:   #efeae0;   /* slightly deeper for alt sections */
+  --ty-ink:          #14141a;   /* near-black, slightly cool */
+  --ty-ink-soft:     #2c2c33;
+  --ty-muted:        #6b6b73;
+  --ty-border:       #e2dccf;
+  --ty-accent:       #c0392b;   /* hanko-seal red, used sparingly */
+  --ty-accent-soft:  #e8d2cc;
+
+  /* Typography */
+  --ty-font-display: 'Fraunces', 'Iowan Old Style', 'Palatino', Georgia, serif;
+  --ty-font-body:    'Inter Tight', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --ty-font-mono:    'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+
+  /* VitePress overrides — light theme */
+  --vp-c-bg:                 var(--ty-paper);
+  --vp-c-bg-alt:             var(--ty-paper-soft);
+  --vp-c-bg-soft:            var(--ty-paper-soft);
+  --vp-c-bg-elv:             var(--ty-paper);
+
+  --vp-c-text-1:             var(--ty-ink);
+  --vp-c-text-2:             var(--ty-ink-soft);
+  --vp-c-text-3:             var(--ty-muted);
+
+  --vp-c-divider:            var(--ty-border);
+  --vp-c-gutter:             var(--ty-border);
+  --vp-c-border:             var(--ty-border);
+
+  --vp-c-brand-1:            var(--ty-accent);
+  --vp-c-brand-2:            var(--ty-accent);
+  --vp-c-brand-3:            var(--ty-accent);
+  --vp-c-brand-soft:         var(--ty-accent-soft);
+
+  --vp-font-family-base:     var(--ty-font-body);
+  --vp-font-family-mono:     var(--ty-font-mono);
+
+  /* Layout */
+  --vp-layout-max-width:     1440px;
+  --vp-nav-height:           68px;
+}
+
+/* Dark theme — kept restrained, just inverts paper/ink */
+.dark {
+  --ty-paper:        #0e0e10;
+  --ty-paper-soft:   #16161a;
+  --ty-ink:          #f3efe6;
+  --ty-ink-soft:     #d6d2c8;
+  --ty-muted:        #8a8a92;
+  --ty-border:       #2a2a30;
+  --ty-accent:       #e85d4e;       /* slightly brighter red on dark */
+  --ty-accent-soft:  #2a1816;
+
+  --vp-c-bg:        var(--ty-paper);
+  --vp-c-bg-alt:    var(--ty-paper-soft);
+  --vp-c-bg-soft:   var(--ty-paper-soft);
+  --vp-c-bg-elv:    var(--ty-paper-soft);
+
+  --vp-c-text-1:    var(--ty-ink);
+  --vp-c-text-2:    var(--ty-ink-soft);
+  --vp-c-text-3:    var(--ty-muted);
+
+  --vp-c-divider:   var(--ty-border);
+  --vp-c-border:    var(--ty-border);
+}
+
+/* ----------------------------------
+   Global typography
+   ---------------------------------- */
+html {
+  font-family: var(--ty-font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-feature-settings: 'ss01', 'cv11';
+  letter-spacing: -0.005em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ty-font-display) !important;
+  font-feature-settings: 'ss01';
+  letter-spacing: -0.015em;
+}
+
+/* Doc page headings — slightly smaller, more editorial */
+.vp-doc h1 {
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+  font-size: clamp(2rem, 4vw, 2.75rem) !important;
+  line-height: 1.1 !important;
+}
+
+.vp-doc h2 {
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  border-top: 1px solid var(--ty-border) !important;
+  padding-top: 1.75rem !important;
+  margin-top: 3rem !important;
+}
+
+.vp-doc h3 {
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.7;
+}
+
+.vp-doc a {
+  text-decoration-color: var(--ty-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.vp-doc a:hover {
+  color: var(--ty-accent) !important;
+}
+
+/* Inline code */
+.vp-doc :not(pre) > code {
+  font-family: var(--ty-font-mono);
+  font-size: 0.875em;
+  background: var(--ty-paper-soft);
+  border: 1px solid var(--ty-border);
+  border-radius: 3px;
+  padding: 0.125em 0.4em;
+  color: var(--ty-ink);
+}
+
+/* Code blocks — slightly muted */
+.vp-doc div[class*='language-'] {
+  border-radius: 4px;
+  border: 1px solid var(--ty-border);
+}
+
+/* Custom blocks — calmer */
+.vp-doc .custom-block {
+  border-radius: 4px;
+  border-left-width: 3px;
+}
+
+/* ----------------------------------
+   Navigation
+   ---------------------------------- */
+.VPNav {
+  background: rgba(247, 244, 238, 0.85) !important;
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--ty-border);
+}
+
+.dark .VPNav {
+  background: rgba(14, 14, 16, 0.85) !important;
+}
+
+.VPNavBarTitle .title {
+  font-family: var(--ty-font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  font-size: 1.125rem !important;
+  border: 0 !important;
+}
+
+.VPNavBarMenuLink {
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+}
+
+/* ----------------------------------
+   Sidebar (docs)
+   ---------------------------------- */
+.VPSidebar {
+  background: var(--ty-paper) !important;
+  padding-top: 1.5rem !important;
+}
+
+.VPSidebarItem .text {
+  font-size: 0.9375rem !important;
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-family: var(--ty-font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em !important;
+  text-transform: none !important;
+  color: var(--ty-ink) !important;
+}
+
+.VPSidebarItem.is-active > .item .link .text {
+  color: var(--ty-accent) !important;
+}
+
+/* ----------------------------------
+   Footer
+   ---------------------------------- */
+.VPFooter {
+  border-top: 1px solid var(--ty-border) !important;
+  background: var(--ty-paper) !important;
+  padding: 2.5rem 24px !important;
+}
+
+.VPFooter .message,
+.VPFooter .copyright {
+  font-size: 0.875rem !important;
+  color: var(--ty-muted) !important;
+  font-family: var(--ty-font-mono) !important;
+  letter-spacing: 0;
+}
+
+/* ----------------------------------
+   Hero adjustments
+   ---------------------------------- */
+.VPHero {
+  padding: clamp(3rem, 8vw, 6rem) 24px 4rem !important;
+}
+
+.VPHero .image {
+  order: 2;
+}
+
+@media (min-width: 960px) {
+  .VPHero .container {
+    gap: 4rem;
+  }
+}
+
+/* ----------------------------------
+   Search
+   ---------------------------------- */
+.DocSearch-Button {
+  border-radius: 999px !important;
+  background: var(--ty-paper-soft) !important;
+  border: 1px solid var(--ty-border) !important;
+}
+
+/* ----------------------------------
+   Selection
+   ---------------------------------- */
+::selection {
+  background: var(--ty-accent);
+  color: var(--ty-paper);
+}
+
+/* ----------------------------------
+   Reduced motion
+   ---------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

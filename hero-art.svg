@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="none">
+  <!-- Background paper tone -->
+  <rect width="480" height="480" fill="transparent"/>
+
+  <!-- Three stacked manga-style panels, slightly rotated, like a stack of volumes -->
+
+  <!-- Back panel -->
+  <g transform="translate(80, 80) rotate(-6 140 160)">
+    <rect x="0" y="0" width="280" height="320" rx="4" fill="#efeae0" stroke="#14141a" stroke-width="2"/>
+    <!-- Panel grid lines -->
+    <line x1="0" y1="120" x2="280" y2="120" stroke="#14141a" stroke-width="2"/>
+    <line x1="140" y1="120" x2="140" y2="320" stroke="#14141a" stroke-width="2"/>
+    <!-- Sketchy speed lines top panel -->
+    <g stroke="#14141a" stroke-width="1.5" stroke-linecap="round" opacity="0.55">
+      <line x1="20"  y1="30" x2="80"  y2="50"/>
+      <line x1="30"  y1="50" x2="100" y2="65"/>
+      <line x1="20"  y1="70" x2="90"  y2="80"/>
+      <line x1="40"  y1="90" x2="110" y2="95"/>
+      <line x1="160" y1="40" x2="240" y2="55"/>
+      <line x1="170" y1="60" x2="250" y2="70"/>
+      <line x1="180" y1="80" x2="245" y2="90"/>
+    </g>
+    <!-- Bottom-left panel: simple landscape lines -->
+    <g stroke="#14141a" stroke-width="1.5" fill="none">
+      <path d="M10 250 Q 70 220 130 250"/>
+      <path d="M10 280 Q 70 255 130 280"/>
+      <circle cx="100" cy="180" r="14" stroke="#c0392b" stroke-width="2" fill="none"/>
+    </g>
+    <!-- Bottom-right panel: speech-balloon shape -->
+    <g fill="#f7f4ee" stroke="#14141a" stroke-width="2">
+      <path d="M160 160 Q160 145 175 145 L255 145 Q270 145 270 160 L270 200 Q270 215 255 215 L210 215 L195 230 L200 215 L175 215 Q160 215 160 200 Z"/>
+    </g>
+    <line x1="170" y1="170" x2="255" y2="170" stroke="#14141a" stroke-width="1.5" opacity="0.6"/>
+    <line x1="170" y1="185" x2="240" y2="185" stroke="#14141a" stroke-width="1.5" opacity="0.6"/>
+    <line x1="170" y1="200" x2="225" y2="200" stroke="#14141a" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Middle panel -->
+  <g transform="translate(120, 110) rotate(2 130 150)">
+    <rect x="0" y="0" width="260" height="300" rx="4" fill="#f7f4ee" stroke="#14141a" stroke-width="2.5"/>
+    <!-- Big panel with a dramatic diagonal gutter -->
+    <line x1="0" y1="180" x2="260" y2="140" stroke="#14141a" stroke-width="2.5"/>
+    <line x1="130" y1="160" x2="130" y2="300" stroke="#14141a" stroke-width="2.5"/>
+    <!-- Top half: silhouette with action lines -->
+    <g>
+      <!-- Concentric "dramatic" arcs -->
+      <g stroke="#14141a" stroke-width="1.25" fill="none" opacity="0.4">
+        <circle cx="130" cy="80" r="30"/>
+        <circle cx="130" cy="80" r="50"/>
+        <circle cx="130" cy="80" r="70"/>
+        <circle cx="130" cy="80" r="95"/>
+      </g>
+      <!-- Center dot/character abstraction -->
+      <circle cx="130" cy="80" r="14" fill="#14141a"/>
+      <circle cx="130" cy="80" r="6"  fill="#c0392b"/>
+    </g>
+    <!-- Bottom-left: text lines suggesting reading -->
+    <g stroke="#14141a" stroke-width="1.5" stroke-linecap="round">
+      <line x1="20"  y1="210" x2="115" y2="210"/>
+      <line x1="20"  y1="225" x2="100" y2="225"/>
+      <line x1="20"  y1="240" x2="115" y2="240"/>
+      <line x1="20"  y1="255" x2="90"  y2="255"/>
+      <line x1="20"  y1="270" x2="110" y2="270"/>
+      <line x1="20"  y1="285" x2="80"  y2="285"/>
+    </g>
+    <!-- Bottom-right: simple reader UI hint -->
+    <g>
+      <rect x="150" y="200" width="90" height="80" rx="2" fill="#efeae0" stroke="#14141a" stroke-width="1.5"/>
+      <line x1="160" y1="215" x2="230" y2="215" stroke="#14141a" stroke-width="1" opacity="0.7"/>
+      <line x1="160" y1="225" x2="220" y2="225" stroke="#14141a" stroke-width="1" opacity="0.7"/>
+      <line x1="160" y1="235" x2="225" y2="235" stroke="#14141a" stroke-width="1" opacity="0.7"/>
+      <!-- progress dot -->
+      <circle cx="195" cy="265" r="4" fill="#c0392b"/>
+    </g>
+  </g>
+
+  <!-- Front: a small "hanko" seal floating -->
+  <g transform="translate(360, 360) rotate(-8 30 30)">
+    <rect x="0" y="0" width="60" height="60" rx="2" fill="#c0392b"/>
+    <text x="30" y="38" text-anchor="middle"
+          font-family="serif" font-weight="700" font-size="22" fill="#f7f4ee">読</text>
+  </g>
+
+  <!-- Faint grain dots for texture -->
+  <g fill="#14141a" opacity="0.06">
+    <circle cx="60"  cy="60"  r="1"/>
+    <circle cx="120" cy="40"  r="1"/>
+    <circle cx="180" cy="70"  r="1"/>
+    <circle cx="40"  cy="200" r="1"/>
+    <circle cx="430" cy="180" r="1"/>
+    <circle cx="450" cy="240" r="1"/>
+    <circle cx="60"  cy="430" r="1"/>
+    <circle cx="200" cy="460" r="1"/>
+    <circle cx="380" cy="80"  r="1"/>
+    <circle cx="420" cy="60"  r="1"/>
+  </g>
+</svg>
